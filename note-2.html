@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>使用自定义的MapBox</title>
+  <link rel="stylesheet" href="./static/css/leaflet.css">
+  <script src="./static/js/leaflet.js"></script>
+  <style>
+    #map-container {
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div id="map-container"></div>
+  <script>
+    var m = L.map('map-container').setView([36.52,120.31], 7);
+    L.tileLayer('https://api.mapbox.com/styles/v1/yqcim/cizh1ma3400ez2so5x1anhuzo/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoieXFjaW0iLCJhIjoiY2l6ZmhnZjExMDBhajJ4cGxnNGN5MnhpdCJ9.pcZtdfk8mSFboCdwqkvW6g', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(m);
+  </script>
+</body>
+</html>
