@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>添加Marker</title>
+  <title>绘制弹出框(Popup)</title>
   <link rel="stylesheet" href="./static/css/leaflet.css">
   <script src="./static/js/leaflet.js"></script>
   <style>
@@ -36,6 +36,28 @@
 
     // add a marker
     var marker = L.marker([36.52,120.31]).addTo(m);    
+    // popup
+    marker.bindPopup('这是个Marker').openPopup();
+    
+    // add a circle
+    var circle = L.circle([36.52,120.31], {
+      color: 'green',
+      fillColor: '#f03',
+      fillOpacity: 0.5,
+      radius: 10000
+    }).addTo(m);
+    // popup
+    circle.bindPopup('我是个圆');
+
+    // add a polygon
+    var polygon = L.polygon([
+      [36, 121],
+      [37, 121],
+      [36.5, 122],
+      [36.5, 122.2]
+    ]).addTo(m);
+    // popup
+    polygon.bindPopup('俺是个多边形');
 
   </script>
 </body>
