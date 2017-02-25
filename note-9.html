@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>基于Click事件的简单效果</title>
+  <link rel="stylesheet" href="./static/css/leaflet.css">
+  <script src="./static/js/leaflet.js"></script>
+  <style>
+    #map-container {
+      width: 600px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div id="map-container"></div>
+  <script>
+    var m = L.map('map-container').setView([36.52,120.31], 7);
+
+    var tileAddress = 'https://api.mapbox.com/styles/v1/yqcim/';
+    tileAddress += 'cizh1ma3400ez2so5x1anhuzo/tiles/256/{z}/{x}/{y}';
+    tileAddress += '?access_token=pk.eyJ1IjoieXFjaW0iLCJhIjoiY2l6ZmhnZjEx';
+    tileAddress += 'MDBhajJ4cGxnNGN5MnhpdCJ9.pcZtdfk8mSFboCdwqkvW6g';
+    
+    var attribution = 'Map data &copy; <a href="http://openstreetmap.org">';
+    attribution += 'OpenStreetMap</a> contributors, '
+    attribution += '<a href="http://creativecommons.org/licenses/by-sa/2.0/">';
+    attribution += 'CC-BY-SA</a>, ';
+    attribution += 'Imagery © <a href="http://mapbox.com">Mapbox</a>';
+
+    L.tileLayer(tileAddress, {
+      maxZoom: 18,
+      attribution: attribution,
+      id: 'mapbox.streets'
+    }).addTo(m);
+
+    // use event
+    var mypop = L.popup();
+    m.on('click', function(e) {
+      var content = '你临幸了这个点：<br>';
+      content += e.latlng.toString();
+      mypop.setLatLng(e.latlng)
+           .setContent(content)
+           .openOn(m);
+    });
+
+  </script>
+</body>
+</html>
