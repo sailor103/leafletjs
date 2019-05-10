@@ -1,0 +1,20 @@
+{
+  "name": "leafletjs",
+  "version": "1.0.0",
+  "description": "自学leafletjs的代码笔记",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sailor103/leafletjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sailor103/leafletjs/issues"
+  },
+  "homepage": "https://github.com/sailor103/leafletjs#readme"
+}
