@@ -4,7 +4,8 @@
   "description": "自学leafletjs的代码笔记",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html",
+    "generate": "node generateIndex.js",
+    "start": "npm run generate && parcel index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/sailor103/leafletjs/issues"
   },
-  "homepage": "https://github.com/sailor103/leafletjs#readme"
+  "homepage": "https://github.com/sailor103/leafletjs#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "create-html": "^4.1.0"
+  }
 }
