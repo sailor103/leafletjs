@@ -8,5 +8,5 @@ npm install
 
 npm run start
 
-访问：https://localhost:1234 即可。
+访问：http://localhost:1234 即可。
 
